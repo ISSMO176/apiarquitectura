@@ -3,7 +3,7 @@ from .api import AdministradorViewSet, AsignaturaViewSet, AlumnosViewSet, PagoVi
 
 router = routers.DefaultRouter()
 
-router.register('api/admin', AdministradorViewSet, 'asignaturas')
+router.register('api/admin', AdministradorViewSet, 'admin')
 router.register('api/asignaturas', AsignaturaViewSet, 'asignaturas')
 router.register('api/alumnos', AlumnosViewSet, 'alumnos')
 router.register('api/pago', PagoViewSet, 'pago')

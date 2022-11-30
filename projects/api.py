@@ -4,7 +4,7 @@ from .serializers import AdministradorSerializer ,AsignaturasSerializer, Alumnos
 
 class  AdministradorViewSet(viewsets.ModelViewSet):
     queryset = Administrador.objects.all()
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAdminUser]
     serializer_class =  AdministradorSerializer
 
 class AsignaturaViewSet(viewsets.ModelViewSet):
