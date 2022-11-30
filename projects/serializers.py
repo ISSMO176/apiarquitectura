@@ -4,7 +4,7 @@ from .models import Asignatura, Alumno, Asistencia, Agenda, Pago, Plataforma, Fo
 class AsignaturasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Asignatura
-        fields = ('id', 'nombre', 'nombre', 'fechacreacion', 'estado')
+        fields = ('id', 'nombre', 'fechacreacion', 'estado')
         read_only_fields = ('fechacreacion', )
         
 class AlumnosSerializer(serializers.ModelSerializer):
@@ -20,7 +20,7 @@ class AsistenciaSerializer(serializers.ModelSerializer):
 class PagoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pago
-        fields = ('id', 'fechaPago', 'idFormaPago', 'rutAlumno', 'valor', 'comision', 'estado', 'idAgenda')
+        fields = ('id', 'fechaPago', 'idFormaPago', 'Datos Alumno', 'valor', 'comision', 'estado', 'idAgenda')
 
 class FormapagoSerializer(serializers.ModelSerializer):
     class Meta:
