@@ -19,7 +19,7 @@ class AsistenciaViewSet(viewsets.ModelViewSet):
 
 class PagoViewSet(viewsets.ModelViewSet):
     queryset = Pago.objects.all()
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = PagoSerializer
 
 class FormapagoViewSet(viewsets.ModelViewSet):
