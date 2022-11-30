@@ -1,9 +1,9 @@
 from rest_framework import routers
-from .api import AsignaturaViewSet, AlumnosViewSet, PagoViewSet, FormapagoViewSet , AgendaViewSet , PlataformaViewSet , ProfesorViewSet, AsistenciaViewSet
+from .api import AdministradorViewSet, AsignaturaViewSet, AlumnosViewSet, PagoViewSet, FormapagoViewSet , AgendaViewSet , PlataformaViewSet , ProfesorViewSet, AsistenciaViewSet
 
 router = routers.DefaultRouter()
 
-router.register('api/admin', AsignaturaViewSet, 'asignaturas')
+router.register('api/admin', AdministradorViewSet, 'asignaturas')
 router.register('api/asignaturas', AsignaturaViewSet, 'asignaturas')
 router.register('api/alumnos', AlumnosViewSet, 'alumnos')
 router.register('api/pago', PagoViewSet, 'pago')
