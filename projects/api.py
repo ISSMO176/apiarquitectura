@@ -1,6 +1,11 @@
-from .models import Asistencia, Asignatura, Pago, Alumno, Profesor, Plataforma, Forma, Agenda
+from .models import  Administrador, Asistencia, Asignatura, Pago, Alumno, Profesor, Plataforma, Forma, Agenda
 from rest_framework import viewsets, permissions
-from .serializers import AsignaturasSerializer, AlumnosSerializer, PagoSerializer, FormapagoSerializer, AgendaSerializer, PlataformaSerializer, ProfesorSerializer, AsistenciaSerializer
+from .serializers import AdministradorSerializer ,AsignaturasSerializer, AlumnosSerializer, PagoSerializer, FormapagoSerializer, AgendaSerializer, PlataformaSerializer, ProfesorSerializer, AsistenciaSerializer
+
+class  AdministradorViewSet(viewsets.ModelViewSet):
+    queryset = Administrador.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class =  AdministradorSerializer
 
 class AsignaturaViewSet(viewsets.ModelViewSet):
     queryset = Asignatura.objects.all()
@@ -19,7 +24,7 @@ class AsistenciaViewSet(viewsets.ModelViewSet):
 
 class PagoViewSet(viewsets.ModelViewSet):
     queryset = Pago.objects.all()
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     serializer_class = PagoSerializer
 
 class FormapagoViewSet(viewsets.ModelViewSet):

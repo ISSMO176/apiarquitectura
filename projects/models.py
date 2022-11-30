@@ -2,6 +2,11 @@ from django.db import models
 
 # Create your models here.
 
+class Administrador(models.Model):
+    nombre = models.CharField(max_length=50)
+    fechacreacion = models.DateTimeField(auto_now_add=True)
+    clave = models.CharField(max_length=10)
+
 class Asignatura(models.Model):
     nombre = models.CharField(max_length=60)
     fechacreacion = models.DateTimeField(auto_now_add=True)

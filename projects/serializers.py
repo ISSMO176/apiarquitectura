@@ -1,5 +1,12 @@
 from rest_framework import serializers
-from .models import Asignatura, Alumno, Asistencia, Agenda, Pago, Plataforma, Forma, Profesor
+from .models import Administrador,Asignatura, Alumno, Asistencia, Agenda, Pago, Plataforma, Forma, Profesor
+
+
+class AdministradorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Administrador
+        fields = ('id', 'nombre', 'fechacreacion', 'clave')
+        read_only_fields = ('fechacreacion', )
 
 class AsignaturasSerializer(serializers.ModelSerializer):
     class Meta:
