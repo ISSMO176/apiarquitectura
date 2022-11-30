@@ -1,17 +1,21 @@
 from rest_framework import serializers
-from .models import Asignaturas, Alumnos, Agenda, Pago, Plataforma, Formapago, Profesor
+from .models import Asignatura, Alumno, Asistencia, Agenda, Pago, Plataforma, Forma, Profesor
 
 class AsignaturasSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Asignaturas
-        fields = ('id', 'codigo', 'nombre', 'descripcion', 'fechacreacion')
+        model = Asignatura
+        fields = ('id', 'nombre', 'nombre', 'fechacreacion', 'estado')
         read_only_fields = ('fechacreacion', )
         
-
 class AlumnosSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Alumnos
-        fields = ('id', 'nombre', 'apellido', 'rut', 'correo', 'estado')
+        model = Alumno
+        fields = ('id', 'rut', 'nombre', 'apellido', 'fechacreacion', 'estado')
+
+class AsistenciaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Asistencia
+        fields = ('id', 'rutAlumno', 'estado', 'fechaAsistencia')
 
 class PagoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,13 +24,13 @@ class PagoSerializer(serializers.ModelSerializer):
 
 class FormapagoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Formapago
+        model = Forma
         fields = ('id', 'nombre', 'fechaCreacion', 'estado')
 
 class AgendaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Agenda
-        fields = ('id', 'fechaHorario', 'fechaHorarioFin', 'idAsignatura', 'datos_profe', 'idPlataforma', 'link', 'estado')
+        fields = ('id', 'fechaHorario', 'fechaHorarioFin', 'idAsignatura', 'rutProfesor', 'idPlataforma', 'link', 'estado')
 
 class PlataformaSerializer(serializers.ModelSerializer):
     class Meta:
